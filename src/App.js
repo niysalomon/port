@@ -20,7 +20,7 @@ const App = () => {
     return (
     <>
         <div>
-          <Navbar/>
+          <Navbar item md={12} SM={12} XS={12}/>
           <Grid container>
             <Grid item md={2} sm={2} xs={2}>
             <Leftbar/>

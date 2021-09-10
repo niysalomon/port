@@ -37,6 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: absolute;
 }
  
 .shareImage{
@@ -63,14 +64,6 @@
     visibility: "none";
 }
 .shareButton {
-    padding: 8px;
-    margin-left: 100px; 
-    border:none;
-    
-    border-radius: 5px;
-    background-color: green;
-    font-weight: 500;
-    color: white;
-    font-style:bold;
+   
 
 }

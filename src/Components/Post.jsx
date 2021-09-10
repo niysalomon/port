@@ -2,12 +2,10 @@ import React from 'react';
 import { Box,makeStyles,Card,Avatar,CardHeader,IconButton,CardMedia,InputBase,Paper,Divider,Fab,Tooltip,
   CardContent,Typography,CardActions,Collapse,Button} from "@material-ui/core"; 
 import { red } from '@material-ui/core/colors';
-import {   MoreVert, Share,Reply,ThumbUp,ThumbDownAlt,AddPhotoAlternate,CameraAlt,EmojiEmotions } from "@material-ui/icons";
+import {   MoreVert, Share,Reply,ThumbUp,ThumbDownAlt,AddPhotoAlternate,CameraAlt,EmojiEmotions,Send,Comment } from "@material-ui/icons";
 import clsx from 'clsx';
 import { Users } from '../dammyData';
 import {useState} from 'react'; 
-
-
 
 const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
@@ -86,16 +84,21 @@ const useStyles= makeStyles( (theme) => ({
     },
      
   fab:{
-    fontSize:"14px",
+    fontSize:"12px",
   },
   tooltip:{    
-    fontSize:"14px",
+    fontSize:"12px",
   },
+  
   commentIcon:{
-    marginTop:"5px",
-  }, 
+    marginTop:"5px",    
+    },
+  
   comment:{
     borderRadius:"20px",
+  },
+  coments:{
+    display:"flex",
   },
   commentBox:{    
     borderRadius:"20px",
@@ -146,7 +149,7 @@ const handleDisClick=()=>{
 
          title={
              <div className={classes.headerTitle}>
-           <Typography className={classes.names}> {Users.filter((u) => u.id === post.userId)[0].username}</Typography>
+           <Typography className={classes.names}> {Users.filter((u) => u.id === post.userId)[0].username} </Typography>
            <Typography className={classes.dates}>  {post.date}</Typography>
           
         </div>} 
@@ -154,7 +157,7 @@ const handleDisClick=()=>{
       <CardMedia
         className={classes.media}
         image={`${PF}${post.photos}`}
-        title={Users.filter((u) => u.id === post.userId)[0].username}
+        title={Users.filter((u) => u.id === post.userId)[0].username} 
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">{post.desc}
@@ -183,7 +186,7 @@ const handleDisClick=()=>{
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <Typography paragraph>12 Comments</Typography>
+          <Typography paragraph className={classes.coments}><Comment className={classes.commentcon}/>12 </Typography>
         </IconButton>
       </CardActions>
 
@@ -234,16 +237,16 @@ const handleDisClick=()=>{
       </IconButton>      
       <InputBase
         className={classes.input}
-        placeholder="write a comment......"
+        placeholder="comment..."
         inputProps={{ 'aria-label': 'search google maps' }}
       />
       <div type="submit" className={classes.commentButton} >
         <AddPhotoAlternate className={classes.commentIcon}/>
         <CameraAlt className={classes.commentIcon}/>
         <EmojiEmotions className={classes.commentIcon}/>
-        <Tooltip className={classes.commentIcon} title="Send" aria-label="send" >
+        <Tooltip className={classes.Tooltip} title="Send" aria-label="send" >
          <Fab color="secondary" className={classes.fab}>
-         Send
+         <Send/>
        </Fab>
 </Tooltip>
       </div> 
