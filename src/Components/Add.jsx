@@ -24,6 +24,7 @@ const useStyles= makeStyles( (theme) => ({
     {
       height:"100hv", 
       width:"100hv",
+      borderRadius:"1px",
     },
   },
   item:{
