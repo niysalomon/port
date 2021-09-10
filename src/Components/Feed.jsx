@@ -21,7 +21,7 @@ const useStyles= makeStyles( (theme) => ({
     marginTop:"0px",
   },
   avataImage:{
-    fontSize:"60px",
+    fontSize:"50px",
   },
 }));
 
