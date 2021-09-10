@@ -10,7 +10,7 @@ const useStyles= makeStyles( (theme) => ({
   },
   avatagrpContainer:{
     alignItems:"center", 
-    padding:"20px",
+    padding:"21px",
     marginBottom:"15px",
     [theme.breakpoints.up("sm")]:{
     display:"none",
