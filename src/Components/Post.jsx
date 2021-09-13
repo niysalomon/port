@@ -222,10 +222,7 @@ const handleDisClick=()=>{
         <IconButton aria-label="add to favorites">
           <ThumbDownAlt/>
           <Typography>2</Typography>          
-        </IconButton>
-        <Button size="small" color="primary">
-          <Reply/>
-        </Button>
+        </IconButton>        
       </CardActions>
       <Box boxShadow={3} className={classes.commentBox}>
       <Paper component="form" className={classes.comment}>
