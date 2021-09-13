@@ -217,7 +217,7 @@ const handleDisClick=()=>{
         </CardContent> 
       <CardActions>
       <IconButton aria-label="add to favorites">
-          <ThumbUp/> <Typography>999</Typography>                   
+          <ThumbUp/> <Typography>19</Typography>                   
         </IconButton>
         <IconButton aria-label="add to favorites">
           <ThumbDownAlt/>
