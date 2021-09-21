@@ -1,5 +1,5 @@
 import { AppBar,makeStyles,Toolbar,Typography,InputBase,alpha, Badge, Avatar} from "@material-ui/core";  
-import { Search,Mail,  Notifications, Cancel, Message } from "@material-ui/icons";
+import { Search, Cancel } from "@material-ui/icons";
 import Notification from'./Notification';
 import Messages from'./Messages';
 import { useState} from "react";

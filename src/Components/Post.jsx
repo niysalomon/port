@@ -150,7 +150,7 @@ const handleDisClick=()=>{
       <CardHeader className={classes.cardheader}
       
         avatar={ 
-          <Avatar alt="no profile" src={`"assets/"${Users.filter((u) => u.id === post.userId)[0].profilePicture}`} >            
+          <Avatar alt="no profile" src={`assets/${Users.filter((u) => u.id === post.userId)[0].profilePicture}`} >            
           </Avatar>
         }  
         action={
@@ -162,7 +162,7 @@ const handleDisClick=()=>{
 
          title={
              <div className={classes.headerTitle}>
-           <Typography className={classes.names}> {Users.filter((u) => u.id === post.userId)[0].username} </Typography>
+           <Typography className={classes.names}> {Users.filter((u) => u.id === post.userId)[0].username}</Typography>
            <Typography className={classes.dates}>  {post.date}</Typography>
           
         </div>} 
@@ -212,7 +212,7 @@ const handleDisClick=()=>{
             
       <CardHeader className={classes.cardheader}      
       avatar={ 
-        <Avatar alt="no profile" src= {Users.filter((u) => u.id === post.userId)[0].profilePicture}  >            
+        <Avatar alt="no profile" src= {`assets/${Users.filter((u) => u.id === post.userId)[0].profilePicture}`}  >            
         </Avatar>
       } 
      
@@ -231,7 +231,7 @@ const handleDisClick=()=>{
         </CardContent> 
       <CardActions>
       <IconButton aria-label="add to favorites">
-          <ThumbUp/> <Typography>999</Typography>                   
+          <ThumbUp/> <Typography>19</Typography>                   
         </IconButton>
         <IconButton aria-label="add to favorites">
           <ThumbDownAlt/>

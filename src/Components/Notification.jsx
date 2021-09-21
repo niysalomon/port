@@ -1,17 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import {Dialog,Container,Modal} from '@material-ui/core';
-import {Person,Mail,Message} from '@material-ui/icons';
-import AddIcon from '@material-ui/icons/Add';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles,Avatar,List,ListItem,ListItemAvatar,ListItemText,DialogTitle,Container,Modal,Typography } from '@material-ui/core'; 
+import { Notifications} from '@material-ui/icons';  
 import { blue } from '@material-ui/core/colors'; 
 import {Posts} from'../dammyData';
 import {Users} from'../dammyData';
@@ -30,8 +20,7 @@ const useStyles = makeStyles((theme)=>({
     padding:theme.spacing(20),
     width:300,
     float:"right",
-    height:"100%",
-    padding:"2px",    
+    height:"100%",    
     backgroundColor:"white",
     border:"none",  
   },
@@ -44,6 +33,9 @@ const useStyles = makeStyles((theme)=>({
       color:"grey",
 
   },
+  messageList:{
+    overflowY:"scroll",
+  },
 
 }));
 
@@ -55,19 +47,17 @@ function Notification(props) {
     onClose(selectedValue);
   };
 
-  const handleListItemClick = (value) => {
-    onClose(value);
-  };
+  
 
   return (
     <Modal className={classes.dialog} onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
         <Container className={classes.container}>
       <DialogTitle id="simple-dialog-title">New Messages </DialogTitle>
-      <List>
+      <List className={classes.messageList}>
         {Posts.map((post) => (
           <ListItem   key={post.id}>
             <ListItemAvatar>               
-              <Avatar className={classes.avatar} alt="no profile" src={`"assets/"${Users.filter((u) => u.id === post.userId)[0].profilePicture}`}/>          
+              <Avatar className={classes.avatar} alt="no profile" src={`assets/${Users.filter((u) => u.id === post.userId)[0].profilePicture}`}/>          
             </ListItemAvatar>
             <div className={classes.message}>
             <ListItemText primary= {Users.filter((u) => u.id === post.userId)[0].username} />
@@ -102,7 +92,7 @@ export default function SimpleDialogDemo() {
 
   return (
     <div>      
-      <Message onClick={handleClickOpen}/>
+      <Notifications onClick={handleClickOpen}/>
        
       <Notification selectedValue={selectedValue} open={open} onClose={handleClose} />
     </div>
