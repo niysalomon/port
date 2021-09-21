@@ -17,8 +17,22 @@ const useStyles= makeStyles( (theme) => ({
     shareOptionText:{
         [theme.breakpoints.down("sm")]:{
             display:"none",
-        }
-    }
+        },
+    },
+    shareButton:{
+        padding: "8px",
+        marginLeft: "75px",
+        border:"none",   
+        borderRadius: "5px",
+        backgroundColor: "green",
+        fontWeight: 500,
+        color: "white",
+        fontStyle:"bold", 
+        [theme.breakpoints.down("sm")]:{
+            fontSize:"12px",
+            marginLeft:"20px", 
+           }, 
+        },
 
 }));
 
@@ -52,7 +66,7 @@ const SharePost = () => {
                             <span className={classes.shareOptionText}>Feelings</span>
 
                         </div>
-                        <button className="shareButton">Share</button>
+                        <button className={classes.shareButton}>Share</button>
                     </div>
                 </div>
             </div> 

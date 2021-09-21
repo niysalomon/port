@@ -13,7 +13,7 @@ const useStyles= makeStyles( (theme) => ({
   container:{
     backgroundColor:"white",
     width:500,
-    height:550,
+    height:551,
     position:"absolute",
     top:0,
     bottom:0,
@@ -24,6 +24,7 @@ const useStyles= makeStyles( (theme) => ({
     {
       height:"100hv", 
       width:"100hv",
+      borderRadius:"1px",
     },
   },
   item:{

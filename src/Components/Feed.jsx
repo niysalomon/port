@@ -4,31 +4,30 @@ import {Posts} from'../dammyData';
 import SharePost from './share/Share';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
 
-
 const useStyles= makeStyles( (theme) => ({
   container:{
     paddingTop:theme.spacing(10),
   },
   avatagrpContainer:{
     alignItems:"center", 
-    padding:"20px",
+    padding:"21px",
     marginBottom:"15px",
     [theme.breakpoints.up("sm")]:{
     display:"none",
     },
-  },
+    },
   avatagGroup:{
     alignItems:"center",    
     marginTop:"0px",
   },
   avataImage:{
-    fontSize:"60px",
+    fontSize:"50px",
   },
 }));
 
 const Feed = () => {
     const classes = useStyles();
-    return (
+    return    (
     <>     
   <div className={classes.container}>   
   <Box boxShadow={3} className={classes.avatagrpContainer}>
@@ -40,20 +39,18 @@ const Feed = () => {
   <Avatar className={classes.avataImage} alt="Trevor Henderson" src="/assets/10.jpg" />
   <Avatar className={classes.avataImage} alt="Trevor Henderson" src="/assets/10.jpg" />
   <Avatar className={classes.avataImage} alt="Trevor Henderson" src="/assets/10.jpg" />
-  <Avatar className={classes.avataImage} alt="Trevor Henderson" src="/assets/posts/11.jpg" />
-  <Avatar className={classes.avataImage} alt="Trevor Henderson" src="/assets/posts/37.jpg" />
+  <Avatar className={classes.avataImage} alt="Trevor Henderson" src="/assets/posts/11.jpg"/>
+  <Avatar className={classes.avataImage} alt="Trevor Henderson" src="/assets/posts/37.jpg"/>
   <Avatar className={classes.avataImage} alt="Trevor Henderson" src="/assets/100.jpg" />
   <Avatar className={classes.avataImage} alt="Trevor Henderson" src="/assets/100.jpg" />
 </AvatarGroup>
 </Box>       
     <SharePost/>
-
-          {Posts.map((p)=>
+              {Posts.map((p)=>
             <Post key={p.id} post={p}/>
           )} 
         </div>
-        </>);
-    
+        </>
+        );    
 };
-
-export default Feed;
+export default Feed; 
