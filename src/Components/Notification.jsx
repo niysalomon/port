@@ -16,13 +16,19 @@ const useStyles = makeStyles((theme)=>({
       marginTop:"66px",
       paddingRight:theme.spacing(1),
   },
-  container:{
-    padding:theme.spacing(20),
+  dialogHeader:{
+    borderBottom:"1px solid grey",
+  },
+  container:{ 
     width:300,
     float:"right",
-    height:"100%",    
+    height:"100%",
+    padding:"2px",    
     backgroundColor:"white",
-    border:"none",  
+    border:"none", 
+    [theme.breakpoints.down("sm")]:{
+       width:"100%",
+    }, 
   },
   message:{
       display:"flex",
@@ -47,12 +53,12 @@ function Notification(props) {
     onClose(selectedValue);
   };
 
-  
+   
 
   return (
     <Modal className={classes.dialog} onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
         <Container className={classes.container}>
-      <DialogTitle id="simple-dialog-title">New Messages </DialogTitle>
+      <DialogTitle className={classes.dialogHeader} id="simple-dialog-title">New Notifications </DialogTitle>
       <List className={classes.messageList}>
         {Posts.map((post) => (
           <ListItem   key={post.id}>

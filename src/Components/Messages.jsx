@@ -23,13 +23,19 @@ const useStyles = makeStyles((theme)=>({
       marginTop:"66px",
       paddingRight:theme.spacing(1),
   },
-  container:{
-    padding:theme.spacing(20),
+  dialogHeader:{
+    borderBottom:"1px solid grey",
+  },
+  container:{ 
     width:300,
     float:"right",
-    height:"100%",     
+    height:"100%",
+    padding:"2px",    
     backgroundColor:"white",
     border:"none",  
+    [theme.breakpoints.down("sm")]:{
+      width:"100%",
+   }, 
   },
   message:{
       display:"flex",
@@ -60,15 +66,17 @@ function Messages(props) {
     onClose(selectedValue);
   };
 
-   
+  const handleListItemClick = (value) => {
+    onClose(value);
+  };
 
   return (
     <Modal className={classes.dialog} onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
         <Container className={classes.container}>
-      <DialogTitle id="simple-dialog-title">New Messages </DialogTitle>
+      <DialogTitle className={classes.dialogHeader} id="simple-dialog-title">New Messages </DialogTitle>
       <List>
         {Users.map((user) => (
-          <ListItem >
+          <ListItem button onClick={() => handleListItemClick(user.username)} key={user.id}>
             <ListItemAvatar>               
               <Avatar className={classes.avatar} alt="no profile" src={`assets/${user.profilePicture}`} color="secondary" variant="dot"/>
               <div className={classes.RightbarOnline}></div>          
