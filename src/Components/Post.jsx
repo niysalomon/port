@@ -39,7 +39,7 @@ const useStyles= makeStyles( (theme) => ({
     }),
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
+    transform: 'rotate(0deg)',
   },
   avatar: {
     objectFit:"cover",
@@ -80,7 +80,8 @@ const useStyles= makeStyles( (theme) => ({
 
   },
   commentButton:{
-    float:"right",    
+    float:"right",
+    display:"flex",    
     },
      
   fab:{
@@ -91,17 +92,29 @@ const useStyles= makeStyles( (theme) => ({
   },
   
   commentIcon:{
-    marginTop:"5px",    
+    marginTop:"5px",  
+    [theme.breakpoints.down("sm")]:{
+      display:"none",
+},
     },
   
   comment:{
-    borderRadius:"20px",
+    borderRadius:"20px", 
+    [theme.breakpoints.down("xs")]:{   
+     display:"flex",
+    },
   },
   coments:{
     display:"flex",
   },
   commentBox:{    
     borderRadius:"20px",
+  },
+  smallTooltip:{
+    float:"right",
+    [theme.breakpoints.up("sm")]:{   
+     display:"none",
+    },
   }
 }));
  
@@ -137,9 +150,9 @@ const handleDisClick=()=>{
       <CardHeader className={classes.cardheader}
       
         avatar={ 
-          <Avatar alt="no profile" src={`${PF}${Users.filter((u) => u.id === post.userId)[0].profilePicture}`} >            
+          <Avatar alt="no profile" src={`"assets/"${Users.filter((u) => u.id === post.userId)[0].profilePicture}`} >            
           </Avatar>
-        } 
+        }  
         action={
           
            <IconButton aria-label="settings">
@@ -172,9 +185,7 @@ const handleDisClick=()=>{
           <ThumbDownAlt onClick={handleDisClick}/>
           <Typography className={classes.postLikecounter}>{post.dislike}</Typography>               
         </IconButton> 
-        <Button size="small" color="primary">
-          <Reply/>
-        </Button>
+         
         <IconButton aria-label="share">
           <Share />
         </IconButton>       
@@ -240,7 +251,13 @@ const handleDisClick=()=>{
         placeholder="comment..."
         inputProps={{ 'aria-label': 'search google maps' }}
       />
-      <div type="submit" className={classes.commentButton} >
+{/*       
+      <Tooltip className={classes.smallTooltip} title="Send" aria-label="send" >
+         <Fab color="secondary" className={classes.fab}>
+         <Send/>
+       </Fab>
+</Tooltip> */}
+       <div type="submit" className={classes.commentButton} >
         <AddPhotoAlternate className={classes.commentIcon}/>
         <CameraAlt className={classes.commentIcon}/>
         <EmojiEmotions className={classes.commentIcon}/>
@@ -249,7 +266,7 @@ const handleDisClick=()=>{
          <Send/>
        </Fab>
 </Tooltip>
-      </div> 
+      </div>  
       <Divider className={classes.divider} orientation="vertical" />            
     </Paper>
     </Box>

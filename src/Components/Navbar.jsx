@@ -1,5 +1,7 @@
 import { AppBar,makeStyles,Toolbar,Typography,InputBase,alpha, Badge, Avatar} from "@material-ui/core";  
-import { Search,Mail,  Notifications, Cancel } from "@material-ui/icons";
+import { Search,Mail,  Notifications, Cancel, Message } from "@material-ui/icons";
+import Notification from'./Notification';
+import Messages from'./Messages';
 import { useState} from "react";
 const useStyles= makeStyles( (theme) => ({
   toolbar:{
@@ -80,10 +82,11 @@ const [open, setOpen] = useState(false)
    <div className={classes.icons}>
      <Search className={classes.searchButton} onClick={() => setOpen(true)}/>
    <Badge badgeContent={4} color="secondary" className={classes.badge}>
-        <Mail />
+        <Messages/>
+         
       </Badge>
       <Badge badgeContent={5} color="secondary"className={classes.badge}>
-        <Notifications />
+        <Notification />
       </Badge>
       <Avatar alt="no profile" src="assets/AAA.jpg"/>
    </div>

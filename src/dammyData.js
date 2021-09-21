@@ -3,36 +3,43 @@ export const Users = [
         id:1,
         profilePicture:"posts/66.jpg",
         username:"Keza phiona",
+        message:"hey how are you!", 
     },
     {
         id:2,
         profilePicture:"posts/4.jpg",
         username:"KPILOPI degreat",
+        message:"amakuru yawe umeze gute!", 
     },
       {
         id:3,
         profilePicture:"posts/m.jpg",
-        username:"KALACYE Ferdinand"
+        username:"KALACYE Ferdinand",
+        message:"didi you find some things!", 
     },
     {
         id:4,
         profilePicture:"posts/10.jpg",
-        username:"Papi claver"
+        username:"Papi claver",
+        message:"how are you!", 
     },
     {
         id:5,
         profilePicture:"posts/ww.jpg",
-        username:"Dorcas NIYOYITA"
+        username:"Dorcas NIYOYITA",
+        message:"hey, you!", 
     },
     {
         id:6,
         profilePicture:"posts/37.jpg",
-        username:"KRANGWA Ferdinand"
+        username:"KRANGWA Ferdinand",
+        message:"hey how are you!", 
     },
     {
         id:7,
         profilePicture:"posts/37.jpg",
-        username:"GASARO Angel"
+        username:"GASARO Angel",
+        message:"how bout you!", 
     },
 
 ];
