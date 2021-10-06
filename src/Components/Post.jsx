@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import { Users } from '../dammyData';
 import {useState} from 'react'; 
 
-const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+// const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
 const useStyles= makeStyles( (theme) => ({
   
@@ -169,7 +169,7 @@ const handleDisClick=()=>{
       />
       <CardMedia
         className={classes.media}
-        image={`${PF}${post.photos}`}
+         image={`assets/${post.photos}`}
         title={Users.filter((u) => u.id === post.userId)[0].username} 
       />
       <CardContent>
