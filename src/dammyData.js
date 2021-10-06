@@ -146,6 +146,35 @@ export const Posts = [
         dislike:3,
         comment:9,
     },
+      {
+        id:11,
+        desc:"KPenalty Shootout | City v Arsenal | Continental Cup Final 2019",
+        photos:"posts/9.jpg",
+        date:"3 days ago",
+        userId:6,
+        like:11,
+        dislike:7,
+        comment:22,
+    },
+    {
+        id:12,
+        desc:"processing package that allows you to both read and write images at the same time. ",
+        photos:"posts/IMG-20190524-WA0014.jpg",
+        date:"2 days ago",
+        userId:6,
+        like:43,
+        dislike:1,
+        comment:10,
+    },{
+        id:13,
+        desc:"processing package that allows you to both read and write images at the same time. ",
+        photos:"posts/11.jpg",
+        date:"2 min ago",
+        userId:7,
+        like:3,
+        dislike:1,
+        comment:18,
+    },
 ];
 
 
