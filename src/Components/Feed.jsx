@@ -31,7 +31,7 @@ const Feed = () => {
     <>     
   <div className={classes.container}>   
   <Box boxShadow={3} className={classes.avatagrpContainer}>
- <AvatarGroup max={8} className={classes.avatagGroup}>
+ <AvatarGroup max={6} className={classes.avatagGroup}>
   <Avatar className={classes.avataImage} alt="Remy Sharp" src="/assets/1.jpg" />
   <Avatar className={classes.avataImage} alt="Travis Howard" src="/assets/4.jpg" />
   <Avatar className={classes.avataImage} alt="Cindy Baker" src="/assets/1.jpgg" />
